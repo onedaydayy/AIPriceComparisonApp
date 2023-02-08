@@ -1,11 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Send_Email" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Client" Type="InArgument(x:String)" />
+    <x:Property Name="in_Email" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1080,603</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1081,663</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Email_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -83,17 +84,17 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Send_Email" sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Send_Email" sap:VirtualizedContainerService.HintSize="400,334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Product Search Result with the Cheapest Price" Name="subject" />
-      <Variable x:TypeArguments="x:String" Default="sheilalyt@outlook.com" Name="email" />
+      <Variable x:TypeArguments="x:String" Name="email" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Hi &quot;+in_Client +&quot;,&quot;+Environment.NewLine+Environment.NewLine +&#xA;&quot;Please have a look at the attached Word document for the result of the product search that your request.&quot; + Environment.NewLine+Environment.NewLine+&#xA;&quot;Thank you for using our application.&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Have a nice day!&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Best Regards&quot;+Environment.NewLine+&#xA;&quot;Mark&quot;]" DisplayName="Send SMTP Mail Message" Email="sheilalyt@gmail.com" EnableSSL="True" From="sheilalyt@gmail.com" sap:VirtualizedContainerService.HintSize="334,222" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Name="Sheila" Password="emzayynudpjqhnqq" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[subject]" To="[email]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Hi &quot;+in_Client +&quot;,&quot;+Environment.NewLine+Environment.NewLine +&#xA;&quot;Please have a look at the attached Word document for the result of the product search that your request.&quot; + Environment.NewLine+Environment.NewLine+&#xA;&quot;Thank you for using our application.&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Have a nice day!&quot;+Environment.NewLine+Environment.NewLine+&#xA;&quot;Best Regards&quot;+Environment.NewLine+&#xA;&quot;Mark&quot;]" DisplayName="Send SMTP Mail Message" Email="sheilalyt@gmail.com" EnableSSL="True" From="sheilalyt@gmail.com" sap:VirtualizedContainerService.HintSize="338,223" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Name="Sheila" Password="emzayynudpjqhnqq" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[subject]" To="[in_Email]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">

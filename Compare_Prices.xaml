@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Compare_Prices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1117,7988" sap2010:WorkflowViewState.IdRef="Compare_Prices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Compare_Prices" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1081,7771" sap2010:WorkflowViewState.IdRef="Compare_Prices_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="70">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="106">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="55">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Compare_Prices" sap:VirtualizedContainerService.HintSize="970,7923" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Compare_Prices" sap:VirtualizedContainerService.HintSize="892,7706" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="final_SS_dt" />
       <Variable x:TypeArguments="s:String[]" Default="[{&quot;Alice&quot;,&quot;Bruce&quot;,&quot;Wayne&quot;,&quot;George&quot;}]" Name="clients_array" />
@@ -106,32 +106,33 @@
       <Variable x:TypeArguments="sd:DataTable" Name="final_sort_SS_dt" />
       <Variable x:TypeArguments="x:String" Name="ss_total_price" />
       <Variable x:TypeArguments="x:String" Name="fp_total_price" />
+      <Variable x:TypeArguments="x:String" Name="email" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Read Each Client Excel Sheet data table and total price of each client" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="908,7812" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[clients_array]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Read Each Client Excel Sheet data table and total price of each client" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="830,7595" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[clients_array]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="872,7655" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="794,7438" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="810,81" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+            <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="732,1330" sap2010:WorkflowViewState.IdRef="SequenceX_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Product Excel File" sap:VirtualizedContainerService.HintSize="540,1179" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" UseTemplate="True" WorkbookPath="Output\ShoppingListForm.xlsx">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Product Excel File" sap:VirtualizedContainerService.HintSize="540,1219" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" UseTemplate="True" WorkbookPath="Output\ShoppingListForm.xlsx">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
@@ -166,7 +167,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ueab:ExcelApplicationCard>
             </ueab:SequenceX>
-            <If sap2010:Annotation.AnnotationText="Compare total price of fair price and Sheng siong and write cheapest price  in relevant client sheet" Condition="[CDbl(fp_total_price) &gt; CDbl(ss_total_price)]" sap:VirtualizedContainerService.HintSize="810,7270" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="Compare total price of fair price and Sheng siong and write cheapest price  in relevant client sheet" Condition="[CDbl(fp_total_price) &gt; CDbl(ss_total_price)]" sap:VirtualizedContainerService.HintSize="732,5436" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -175,7 +176,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="654,1716" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="654,1358" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -223,7 +224,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CopyFile>
-                  <p:WordApplicationScope sap2010:Annotation.AnnotationText="Write data table to word file" DisplayName="Word Application Scope" FilePath="[&quot;Output\Product Price_&quot;+currentItem.ToString+&quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="592,441" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+                  <p:WordApplicationScope sap2010:Annotation.AnnotationText="Write data table to word file" DisplayName="Word Application Scope" FilePath="[&quot;Output\Product Price_&quot;+currentItem.ToString+&quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="592,83" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
                     <p:WordApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WordDocument">
                         <ActivityAction.Argument>
@@ -241,7 +242,7 @@
                     </p:WordApplicationScope.Body>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
@@ -250,14 +251,14 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="732,5347" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence sap:VirtualizedContainerService.HintSize="654,3871" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ueab:SequenceX sap2010:Annotation.AnnotationText="Write cheapest price datatable if datatable is fair price" DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="670,930" sap2010:WorkflowViewState.IdRef="SequenceX_3">
+                  <ueab:SequenceX sap2010:Annotation.AnnotationText="Write cheapest price datatable if datatable is fair price" DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="592,930" sap2010:WorkflowViewState.IdRef="SequenceX_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -290,7 +291,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelApplicationCard>
                   </ueab:SequenceX>
-                  <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Move template word file" Destination="[&quot;Output\Product Price_&quot;+currentItem.ToString+&quot;.docx&quot;]" DisplayName="Copy Template File " sap:VirtualizedContainerService.HintSize="670,185" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="Template\Product Price.docx">
+                  <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Move template word file" Destination="[&quot;Output\Product Price_&quot;+currentItem.ToString+&quot;.docx&quot;]" DisplayName="Copy Template File " sap:VirtualizedContainerService.HintSize="592,185" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="Template\Product Price.docx">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,14 +300,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CopyFile>
-                  <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove name column in the datatble" ColumnName="Name" DataTable="[final_FP_dt]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="670,217" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+                  <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove name column in the datatble" ColumnName="Name" DataTable="[final_FP_dt]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="592,217" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RemoveDataColumn>
-                  <p:WordApplicationScope sap2010:Annotation.AnnotationText="Write datatable" DisplayName="Word Application Scope" FilePath="[&quot;Output\Product Price_&quot;+currentItem.ToString+&quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="670,83" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+                  <p:WordApplicationScope sap2010:Annotation.AnnotationText="Write datatable" DisplayName="Word Application Scope" FilePath="[&quot;Output\Product Price_&quot;+currentItem.ToString+&quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="592,83" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
                     <p:WordApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WordDocument">
                         <ActivityAction.Argument>
@@ -330,8 +331,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </p:WordApplicationScope>
-                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="670,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
-                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;Alice&quot;]" DisplayName="If Client is Alice" sap:VirtualizedContainerService.HintSize="670,1601" sap2010:WorkflowViewState.IdRef="If_3">
+                  <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="592,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="WINWORD" />
+                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;Alice&quot;]" DisplayName="If Client is Alice" sap:VirtualizedContainerService.HintSize="592,473" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -340,13 +341,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="592,1291" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_Alice.docx" sap:VirtualizedContainerService.HintSize="530,1180" sap2010:WorkflowViewState.IdRef="WordApplicationScope_4">
+                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_Alice.docx" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="WordApplicationScope_4">
                           <p:WordApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WordDocument">
                               <ActivityAction.Argument>
@@ -366,7 +367,7 @@
                           </p:WordApplicationScope.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -383,7 +384,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;Bruce&quot;]" DisplayName="If Client is Bruce" sap:VirtualizedContainerService.HintSize="670,1601" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;Bruce&quot;]" DisplayName="If Client is Bruce" sap:VirtualizedContainerService.HintSize="592,473" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -392,13 +393,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="592,1291" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_Bruce.docx" sap:VirtualizedContainerService.HintSize="530,1180" sap2010:WorkflowViewState.IdRef="WordApplicationScope_5">
+                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_Bruce.docx" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="WordApplicationScope_5">
                           <p:WordApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WordDocument">
                               <ActivityAction.Argument>
@@ -418,7 +419,7 @@
                           </p:WordApplicationScope.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -435,22 +436,22 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;George&quot;]" DisplayName="If Client is George" sap:VirtualizedContainerService.HintSize="670,83" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;George&quot;]" DisplayName="If Client is George" sap:VirtualizedContainerService.HintSize="592,473" sap2010:WorkflowViewState.IdRef="If_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="592,1291" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_19">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_George.docx" sap:VirtualizedContainerService.HintSize="530,1180" sap2010:WorkflowViewState.IdRef="WordApplicationScope_6">
+                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_George.docx" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="WordApplicationScope_6">
                           <p:WordApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WordDocument">
                               <ActivityAction.Argument>
@@ -470,7 +471,7 @@
                           </p:WordApplicationScope.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -487,22 +488,23 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;Wayne&quot;]" DisplayName="If Client is Wayne" sap:VirtualizedContainerService.HintSize="670,83" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If sap2010:Annotation.AnnotationText="Add images to word file" Condition="[currentItem = &quot;Wayne&quot;]" DisplayName="If Client is Wayne" sap:VirtualizedContainerService.HintSize="592,473" sap2010:WorkflowViewState.IdRef="If_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="592,1291" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                      <Sequence sap:VirtualizedContainerService.HintSize="400,163" sap2010:WorkflowViewState.IdRef="Sequence_22">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_Wayne.docx" sap:VirtualizedContainerService.HintSize="530,1180" sap2010:WorkflowViewState.IdRef="WordApplicationScope_7">
+                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output\Product Price_Wayne.docx" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="WordApplicationScope_7">
                           <p:WordApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WordDocument">
                               <ActivityAction.Argument>
@@ -522,7 +524,7 @@
                           </p:WordApplicationScope.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -542,9 +544,146 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="810,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Send_Email.xaml">
+            <If Condition="[currentItem = &quot;Alice&quot;]" sap:VirtualizedContainerService.HintSize="732,52" sap2010:WorkflowViewState.IdRef="If_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">sheilalyt@outlook.com</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[currentItem = &quot;Bruce&quot;]" sap:VirtualizedContainerService.HintSize="732,52" sap2010:WorkflowViewState.IdRef="If_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">sheilalyt@outlook.com</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[currentItem = &quot;George&quot;]" sap:VirtualizedContainerService.HintSize="732,52" sap2010:WorkflowViewState.IdRef="If_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">sheilalyt@outlook.com</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[currentItem = &quot;Wayne&quot;]" sap:VirtualizedContainerService.HintSize="732,52" sap2010:WorkflowViewState.IdRef="If_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">sheilalyt@outlook.com</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="732,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Send_Email.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_Client">[currentItem]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Email">[email]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>

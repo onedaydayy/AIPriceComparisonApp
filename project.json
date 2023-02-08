@@ -1,12 +1,13 @@
 {
   "name": "AIPriceComparisonApp",
   "description": "",
-  "main": "Main.xaml",
+  "main": "PriceComparisonApp.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.17.0-preview]",
     "UiPath.Form.Activities": "[2.0.3]",
     "UiPath.FormActivityLibrary": "[2.0.4]",
     "UiPath.Mail.Activities": "[1.18.2]",
+    "UiPath.MLServices.Activities": "[2.0.0]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[22.12.0-preview]",
     "UiPath.UIAutomation.Activities": "[22.10.4]",
@@ -44,13 +45,19 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "4956f3cd-ce3c-4df8-98db-20b0ca6ab993",
+      "filePath": "PriceComparisonApp.xaml",
+      "uniqueId": "b9e59088-2597-4464-af17-027345483f59",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "SS_Alice.xaml",
+      "uniqueId": "c578b712-976e-4c4d-9f4f-412f7a3567b0",
       "input": [],
       "output": []
     }
