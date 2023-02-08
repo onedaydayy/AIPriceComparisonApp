@@ -1,7 +1,7 @@
 {
   "name": "AIPriceComparisonApp",
   "description": "",
-  "main": "PriceComparisonApp.xaml",
+  "main": "AIPriceComparisonApp.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.17.0-preview]",
     "UiPath.Form.Activities": "[2.0.3]",
@@ -32,7 +32,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -50,14 +51,14 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "PriceComparisonApp.xaml",
-      "uniqueId": "b9e59088-2597-4464-af17-027345483f59",
+      "filePath": "SS_Alice.xaml",
+      "uniqueId": "c578b712-976e-4c4d-9f4f-412f7a3567b0",
       "input": [],
       "output": []
     },
     {
-      "filePath": "SS_Alice.xaml",
-      "uniqueId": "c578b712-976e-4c4d-9f4f-412f7a3567b0",
+      "filePath": "AIPriceComparisonApp.xaml",
+      "uniqueId": "eb3f820c-3357-4c3d-bcc5-634912ad45b3",
       "input": [],
       "output": []
     }
